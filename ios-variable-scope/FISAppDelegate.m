@@ -25,4 +25,33 @@
  
  */
 
+- (NSMutableArray *)arrayByAddingString:(NSString *)string toArray:(NSMutableArray *)array {
+    
+    NSMutableArray *arrayCopy = [array mutableCopy];
+    NSString *addNew = string;
+    [arrayCopy addObject:addNew];
+    
+        
+    return arrayCopy;
+    
+}
+
+-(NSUInteger)countOfUppercaseStringsInArray:(NSArray *)array {
+    
+    NSArray *stringArray = array;
+    NSUInteger *uppercaseCount;
+    for (NSUInteger i = 0; i < [stringArray count]; i++) {
+        BOOL isUppercase = [[NSCharacterSet uppercaseLetterCharacterSet] characterIsMember:[stringArray characterAtIndex:[i]]];
+        if (isUppercase == YES) {
+            
+            
+        }
+    }
+    
+    
+    return nil;
+}
+
+
+
 @end

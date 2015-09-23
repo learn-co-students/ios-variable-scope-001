@@ -25,4 +25,30 @@
  
  */
 
+-(NSMutableArray *)arrayByAddingString:(NSString *)string toArray:(NSMutableArray *)array{
+    NSMutableArray *mutableCopyArray=[array mutableCopy];
+    [mutableCopyArray addObject:string];
+    return  mutableCopyArray;
+    
+}
+
+
+-(NSUInteger)countOfUppercaseStringsInArray:(NSArray *)array{
+    
+    NSUInteger count=0;
+    for (NSUInteger i=0; i<[array count]; i++) {
+        NSCharacterSet *lowerCaseSet = [NSCharacterSet lowercaseLetterCharacterSet];
+        
+        if ([[array objectAtIndex:i] rangeOfCharacterFromSet:lowerCaseSet].location == NSNotFound){
+            count++;
+        }
+    }
+    return count;
+}
+
+-(void)removeAllObjectsFromArray:(NSMutableArray *)array{
+    
+    [array removeAllObjects];
+}
+
 @end
